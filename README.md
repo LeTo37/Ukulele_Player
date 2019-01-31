@@ -20,3 +20,7 @@ These solenoids will be controlled using a PIC32 Microcontroller and a driver ci
 ### Mechanical Designs
 
 This directory holds the mechanical designs, in ".stl" format, that I have designed in Onshape, an open source, online CAD tool.
+
+### Circuit Schematics
+
+This directory holds the circuit design schematics for the solenoid drivers, in ".sch" format, that I have designed in kiCad, an open source, PCB and schematics design tool.
