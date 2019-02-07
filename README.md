@@ -24,3 +24,9 @@ This directory holds the mechanical designs, in ".stl" format, that I have desig
 ### Circuit Schematics
 
 This directory holds the circuit design schematics for the solenoid drivers, in ".sch" format, that I have designed in kiCad, an open source, PCB and schematics design tool.
+
+### Docs
+This directory holds the datasheets for all the relevant components used and any other useful documentation.
+
+### Code
+This directory will hold the code used to program the PIC32MX795F512H micro controller on the NU32 breakout board. 
