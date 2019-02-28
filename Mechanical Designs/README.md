@@ -1,0 +1,3 @@
+This directory has one folder that holds some of the unused designs that were iterated through in the process of getting to the final design shown in the root of this directory. This final design was implemented with a combination of 3d printing PLA parts and Laser cutting Acryllic parts. The design called [Base_and_Uke_Housing.stl](Base_and_Uke_Housing.stl) was 3d printed and the designs called [top_solenoid_holder.svg](top_solenoid_holder.svg), [middle_solenoid_holder.svg](middle_solenoid_holder.svg) and [bottom_solenoid_holder.svg](bottom_solenoid_holder.svg) were cut out using a Laser Cutter. 
+
+
