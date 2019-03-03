@@ -1,8 +1,8 @@
-#include "NU32.h"  
+#include "chords.h"  
 
 int main(void) {
   NU32_Startup(); // cache on, min flash wait, interrupts on, LED/button init, UART init
-   while(1) {
+     while(1) {
       ; // do nothing, loop forever
   }
 
