@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdio.h>
 
+char read_file(void);
+
 int main(void) {
   char song[100];
   int chord_counter = 0;
@@ -21,10 +23,10 @@ int main(void) {
   while(1)
   {
     LATB = 0x0000;
-  	NU32_WriteUART3("Please Enter song in the following format: \r\n");
-  	NU32_WriteUART3("Chord,seconds,chord,seconds,chord,seconds,...\r\n");
-    NU32_ReadUART3(song, 100);
-    NU32_WriteUART3("Playing song:\r\n");
+  	
+
+    song = read_file();
+
     token = strtok(song,split);
     while (token != NULL)
     {
@@ -56,3 +58,7 @@ int main(void) {
   return 0;
 }
 
+char read_file(void)
+{
+  
+}
