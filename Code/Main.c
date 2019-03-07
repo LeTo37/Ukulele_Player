@@ -4,33 +4,38 @@
 
 int main(void) {
   char song[100];
-  unsigned int chord_counter = 0;
+  int chord_counter = 0;
   char chords[100];
-  unsigned int seconds[100];
+  int seconds[100];
+  int i = 0;
+  char debugprint[100];
 
-  const char split = ",";
+  const char* split = ",";
   char* token;
   unsigned int ch_or_sec = 0; //bool type int to flag whether input is chord or seconds.
 
   NU32_Startup(); // cache on, min flash wait, interrupts on, LED/button init, UART init
-  
+  //DIO setup:
+  TRISB = 0x0000;         // set B0-B15 as digital outputs
 
   while(1)
   {
+    LATB = 0x0000;
   	NU32_WriteUART3("Please Enter song in the following format: \r\n");
   	NU32_WriteUART3("Chord,seconds,chord,seconds,chord,seconds,...\r\n");
     NU32_ReadUART3(song, 100);
+    NU32_WriteUART3("Playing song:\r\n");
     token = strtok(song,split);
     while (token != NULL)
     {
     	if (ch_or_sec == 0)
     	{
-	    	chords[chord_counter] = token;
+	    	chords[chord_counter] = *token;
 	    	ch_or_sec = 1;
 	    }
 	    else if (ch_or_sec == 1)
     	{
-	    	chords[chord_counter] = token;
+	    	seconds[chord_counter] = (int)(*token)-48;
 	    	chord_counter++;
 	    	ch_or_sec = 0;
 	    }
@@ -38,9 +43,13 @@ int main(void) {
 	   	token = strtok(NULL, ",");
     }
 
-     for(int i = 0; i < chord_counter; i++ )
+     for(i=0; i < chord_counter; i++ )
      {
      	play_chord(chords[i], seconds[i]);
+      sprintf(debugprint,"Chord: %c \r\n",chords[i]);
+      NU32_WriteUART3(debugprint);
+      sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
+      NU32_WriteUART3(debugprint);
      }
   }
 

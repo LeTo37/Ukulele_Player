@@ -1,6 +1,6 @@
 XC32PATH=/opt/microchip/xc32/v2.15/bin
 HARMONYPATH=/home/levi/microchip/harmony
-NU32PATH=/home/levi/Desktop/ME_333_Intro_to_Mechatronics/code
+NU32PATH=/home/levi/Desktop/Winter_Project/Ukulele_Player/NU32_Utility
 PORT=/dev/ttyUSB0
 TERMEMU=screen
 
