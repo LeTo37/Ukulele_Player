@@ -2,10 +2,12 @@
 #include <string.h>
 #include <stdio.h>
 
-char read_file(void);
+#define SONG_LENGTH 100
+static char song[SONG_LENGTH];
+
+void read_file(void);
 
 int main(void) {
-  char song[100];
   int chord_counter = 0;
   char chords[100];
   int seconds[100];
@@ -25,7 +27,7 @@ int main(void) {
     LATB = 0x0000;
   	
 
-    song = read_file();
+    read_file();
 
     token = strtok(song,split);
     while (token != NULL)
@@ -58,7 +60,19 @@ int main(void) {
   return 0;
 }
 
-char read_file(void)
+void read_file(void)
 {
-  
+  FILE *file_obj;
+
+  file_obj = fopen("input.txt","r");
+  if (file_obj == NULL)
+  {
+    sprintf(song,"File does not exist"); // definitely need better error handling
+  }
+  else
+  {
+  fgets(song,SONG_LENGTH,file_obj);
+  fclose(file_obj);
+  }
+
 }
