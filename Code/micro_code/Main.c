@@ -56,9 +56,12 @@ int main(void) {
       sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
       NU32_WriteUART3(debugprint);
      }
-     NU32_WriteUART3("Done!\r\n");
-     chord_counter = 0;
-     NU32_LED1 = !NU32_LED1;
+     if (i == chord_counter)
+     {
+       NU32_WriteUART3("Done!\r\n");
+       chord_counter = 0;
+       NU32_LED1 = !NU32_LED1;
+     }
 
   }
 

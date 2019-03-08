@@ -23,7 +23,8 @@ def main():
 def list_songs():
 	global filename
 	print("Please choose a song from the list below!")
-	print("1 -> Redemption Song, Bob Marley\n")
+	print("1 -> Redemption Song, Bob Marley\n"
+		+ "2 -> test")
 	song_number = 100
 	while song_number  < 0 or song_number > 2:
 		song_number = int(raw_input("To choose a song, simply type the number next to it\n"))
@@ -34,8 +35,8 @@ def list_songs():
 	print(song)
 	# time.sleep(15)
 	# ser.flush()
-	while ser.read(10) != "Done!\r\n":
-		print(ser.write(ser.read(10)))
+	while ser.read(10):
+		pass
 
 # def input_song():
 
