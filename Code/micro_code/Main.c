@@ -29,10 +29,6 @@ int main(void) {
     token = strtok(song,split);
     while (token != NULL)
     {
-      // if (token == "%")
-      // {
-      //   NU32_WriteUART3("%\r\n");
-      // }
     	if (ch_or_sec == 0)
     	{
 	    	chords[chord_counter] = *token;
@@ -51,14 +47,14 @@ int main(void) {
      for(i=0; i < chord_counter; i++ )
      {
      	play_chord(chords[i], seconds[i]);
-      sprintf(debugprint,"Chord: %c \r\n",chords[i]);
-      NU32_WriteUART3(debugprint);
-      sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
-      NU32_WriteUART3(debugprint);
+      // sprintf(debugprint,"Chord: %c \r\n",chords[i]);
+      // NU32_WriteUART3(debugprint);
+      // sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
+      // NU32_WriteUART3(debugprint);
      }
      if (i == chord_counter)
      {
-       NU32_WriteUART3("Done!\r\n");
+       // NU32_WriteUART3("Done!\r\n");
        chord_counter = 0;
        NU32_LED1 = !NU32_LED1;
      }

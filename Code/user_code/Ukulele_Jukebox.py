@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import serial
-import time
+# import time
 
 ser = serial.Serial('/dev/ttyUSB0')
 ser.baudrate = 230400
@@ -22,19 +22,18 @@ def main():
 
 def list_songs():
 	global filename
-	print("Please choose a song from the list below!")
-	print("1 -> Redemption Song, Bob Marley\n"
-		+ "2 -> test")
+	print_list()
 	song_number = 100
-	while song_number  < 0 or song_number > 2:
-		song_number = int(raw_input("To choose a song, simply type the number next to it\n"))
-	pick_song(song_number)
+	song_number = raw_input("To choose a song, simply type the number next to it\n")
+	while song_number not in {'1','2'}:
+		print("Please enter a valid choice")
+		print_list()
+		song_number = raw_input("To choose a song, simply type the number next to it\n")
+	pick_song(int(song_number))
 	f = open (filename,"r")
 	song = f.read() + "\r\n"
 	ser.write(song)
 	print(song)
-	# time.sleep(15)
-	# ser.flush()
 	while ser.read(10):
 		pass
 
@@ -47,6 +46,11 @@ def pick_song(arg):
 		2: "test",
 	}
 	filename = switcher.get(arg, "nothing")
+
+def print_list():
+	print("Please choose a song from the list below!")
+	print("1 -> Redemption Song, Bob Marley\n"
+		+ "2 -> test")
 
 if __name__ == '__main__':
    	try:
