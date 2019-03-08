@@ -50,7 +50,7 @@ def pick_song(arg):
 
 def print_list():
 	print("Please choose a song from the list below!")
-	print("1 -> Redemption Song, Bob Marley\n"
+	print("1 -> Redemption Song, Bob Marley (Difficult Strumming)\n"
 		+ "2 -> test")
 
 if __name__ == '__main__':
