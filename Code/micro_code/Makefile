@@ -1,6 +1,6 @@
 XC32PATH=/opt/microchip/xc32/v2.15/bin
 # HARMONYPATH=/home/levi/microchip/harmony
-NU32PATH=./NU32_Utility
+NU32PATH=../NU32_Utility
 PORT=/dev/ttyUSB0
 TERMEMU=screen
 
