@@ -6,8 +6,8 @@
 
 int main(void) {
   int chord_counter = 0;
-  char chords[1000];
-  int seconds[1000];
+  char chords[100][4];
+  int seconds[100];
   int i = 0;
   char debugprint[100];
   char song[SONG_LENGTH];
@@ -31,8 +31,10 @@ int main(void) {
     {
     	if (ch_or_sec == 0)
     	{
-	    	chords[chord_counter] = *token;
+	    	strcpy(chords[chord_counter],token);
 	    	ch_or_sec = 1;
+        // sprintf(debugprint,"HosJy: %s \r\n",chords[chord_counter]);
+        // NU32_WriteUART3(debugprint);
 	    }
 	    else if (ch_or_sec == 1)
     	{
@@ -47,16 +49,16 @@ int main(void) {
      for(i=0; i < chord_counter; i++ )
      {
      	play_chord(chords[i], seconds[i]);
-      // sprintf(debugprint,"Chord: %c \r\n",chords[i]);
-      // NU32_WriteUART3(debugprint);
-      // sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
-      // NU32_WriteUART3(debugprint);
+      sprintf(debugprint,"Chord: %s \r\n",chords[i]);
+      NU32_WriteUART3(debugprint);
+      sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
+      NU32_WriteUART3(debugprint);
      }
-     if (i == chord_counter)
+     if (i == chord_counter && i != 0)
      {
-       // NU32_WriteUART3("Done!\r\n");
        chord_counter = 0;
        NU32_LED1 = !NU32_LED1;
+       NU32_WriteUART3("Done!\r\n");
      }
 
   }

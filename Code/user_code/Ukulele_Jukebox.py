@@ -4,7 +4,7 @@ import serial
 
 ser = serial.Serial('/dev/ttyUSB0')
 ser.baudrate = 230400
-ser.timeout = 5.0
+ser.timeout = 10.0
 if ser.name:
 	print("Serial Connection Success")
 
@@ -34,8 +34,9 @@ def list_songs():
 	song = f.read() + "\r\n"
 	ser.write(song)
 	print(song)
-	while ser.read(10):
-		pass
+	while ser.read():
+		print(ser.read()) # Check out how to do this for reals
+	ser.flush();
 
 # def input_song():
 
