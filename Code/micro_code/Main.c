@@ -2,12 +2,12 @@
 #include <string.h>
 #include <stdio.h>
 
-#define SONG_LENGTH 100
+#define SONG_LENGTH 1000
 
 int main(void) {
   int chord_counter = 0;
-  char chords[100];
-  int seconds[100];
+  char chords[1000];
+  int seconds[1000];
   int i = 0;
   char debugprint[100];
   char song[SONG_LENGTH];
@@ -29,6 +29,10 @@ int main(void) {
     token = strtok(song,split);
     while (token != NULL)
     {
+      // if (token == "%")
+      // {
+      //   NU32_WriteUART3("%\r\n");
+      // }
     	if (ch_or_sec == 0)
     	{
 	    	chords[chord_counter] = *token;
@@ -47,14 +51,13 @@ int main(void) {
      for(i=0; i < chord_counter; i++ )
      {
      	play_chord(chords[i], seconds[i]);
-      // sprintf(debugprint,"Chord: %c \r\n",chords[i]);
-      // NU32_WriteUART3(debugprint);
-      // sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
-      // NU32_WriteUART3(debugprint);
+      sprintf(debugprint,"Chord: %c \r\n",chords[i]);
+      NU32_WriteUART3(debugprint);
+      sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
+      NU32_WriteUART3(debugprint);
      }
-     // NU32_WriteUART3("Done!\r\n");
+     NU32_WriteUART3("Done!\r\n");
      chord_counter = 0;
-     song[0] = 0;
      NU32_LED1 = !NU32_LED1;
 
   }

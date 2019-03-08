@@ -27,6 +27,8 @@
 #define D_7 0x01E0 //B5, B6, B7 and B8
 #define G_7 0x0052 //B1, B4 and B6
 #define C_sh 0x010E //B1, B2, B3 and B8
+#define A_m_7 0x0000
+#define E_m_7 0x0050 //B4 and B6
 
 
 
