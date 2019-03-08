@@ -3,7 +3,6 @@
 #include <stdio.h>
 
 #define SONG_LENGTH 100
-static char song[SONG_LENGTH];
 
 int main(void) {
   int chord_counter = 0;
@@ -11,6 +10,7 @@ int main(void) {
   int seconds[100];
   int i = 0;
   char debugprint[100];
+  char song[SONG_LENGTH];
 
   const char* split = ",";
   char* token;
@@ -19,13 +19,12 @@ int main(void) {
   NU32_Startup(); // cache on, min flash wait, interrupts on, LED/button init, UART init
   //DIO setup:
   TRISB = 0x0000;         // set B0-B15 as digital outputs
-
+  NU32_WriteUART3("Let's Go!\r\n");
   while(1)
   {
     LATB = 0x0000;
-  	
     NU32_ReadUART3(song, SONG_LENGTH);
-    NU32_WriteUART3("Playing song:\r\n");
+    // NU32_WriteUART3("Playing song:\r\n");
     
     token = strtok(song,split);
     while (token != NULL)
@@ -48,11 +47,16 @@ int main(void) {
      for(i=0; i < chord_counter; i++ )
      {
      	play_chord(chords[i], seconds[i]);
-      sprintf(debugprint,"Chord: %c \r\n",chords[i]);
-      NU32_WriteUART3(debugprint);
-      sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
-      NU32_WriteUART3(debugprint);
+      // sprintf(debugprint,"Chord: %c \r\n",chords[i]);
+      // NU32_WriteUART3(debugprint);
+      // sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
+      // NU32_WriteUART3(debugprint);
      }
+     // NU32_WriteUART3("Done!\r\n");
+     chord_counter = 0;
+     song[0] = 0;
+     NU32_LED1 = !NU32_LED1;
+
   }
 
   return 0;
