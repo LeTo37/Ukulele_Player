@@ -2,12 +2,12 @@
 #include <string.h>
 #include <stdio.h>
 
-#define SONG_LENGTH 1000
+#define SONG_LENGTH 10000
 
 int main(void) {
   int chord_counter = 0;
-  char chords[100][4];
-  int seconds[100];
+  char chords[10000][4];
+  int seconds[10000];
   int i = 0;
   char debugprint[100];
   char song[SONG_LENGTH];
