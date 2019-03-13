@@ -25,7 +25,7 @@ def list_songs():
 	print_list_songs()
 	song_number = 100
 	song_number = raw_input("To choose a song, simply type the number next to it\n")
-	while song_number not in {'1','2','3','4'}:
+	while song_number not in {'1','2','3','4','5','6'}:
 		print("Please enter a valid choice")
 		print_list_songs()
 		song_number = raw_input("To choose a song, simply type the number next to it\n")
@@ -64,7 +64,9 @@ def pick_song(arg):
 		1: "Redemption_Song",
 		2: "Let_it_be",
 		3: "Somewhere_over_the_rainbow",
-		4: "test",
+		4: "Riptide",
+		5: "Rising_Sun",
+		6: "test"
 	}
 	filename = switcher.get(arg, "test")
 
@@ -72,7 +74,9 @@ def print_list_songs():
 	print("Please choose a song from the list below!")
 	print("1 -> Redemption Song, Bob Marley (Difficult Strumming)\n"
 		+ "2 -> Let it be, The Beatles\n"
-		+"3 -> Somewhere over the Rainbow, Israel Kamakawiwo'ole\n")
+		+"3 -> Somewhere over the Rainbow, Israel Kamakawiwo'ole\n"
+		+"4 -> Riptide, Vance Joy\n"
+		+"5 -> House of the Rising Sun, The Animals\n")
 
 def print_list_chords():
 	print("Please pick from the following list of chords only:")

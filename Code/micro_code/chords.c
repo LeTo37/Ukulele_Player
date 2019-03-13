@@ -1,6 +1,6 @@
 #include "chords.h"
 
-void delay_seconds(int secs)//delay for amount of time in seconds
+static void delay_seconds(int secs)//delay for amount of time in seconds
 {
 	_CP0_SET_COUNT(0);
 	while (_CP0_GET_COUNT() < (secs*40000000)) //number of seconds to delay times 40000000 clock ticks (1 sec) 
