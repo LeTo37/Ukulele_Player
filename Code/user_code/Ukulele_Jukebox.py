@@ -111,7 +111,7 @@ def send_song(song):
 	print(song)
 	ser.write(song)
 	while ser.read():
-		ser.read() # Check out how to do this for reals
+		print(ser.read(10)) # Check out how to do this for reals
 	ser.flush();
 
 if __name__ == '__main__':
