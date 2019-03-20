@@ -110,8 +110,9 @@ def print_list_chords():
 def send_song(song):
 	print(song)
 	ser.write(song)
-	while ser.read():
-		print(ser.read(10)) # Check out how to do this for reals
+	while ser.read() != '!':
+		# print(ser.read(10)) # Check out how to do this for reals
+		pass;
 	ser.flush();
 
 if __name__ == '__main__':

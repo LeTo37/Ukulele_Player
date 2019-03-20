@@ -1,5 +1,5 @@
-# Ukulele_Player
-Designing and building an autonomous Ukulele player
+# Human-Robot Ukulele Player (H-RUP)
+Designing and building an Human-Interactable Robotic Ukulele player
 
 ## Introduction
 This repository will hold all the relevant documentation, including mechanical designs, circuit designs, code and data-sheets of the parts used in the process of designing and building an automated Ukulele player. 

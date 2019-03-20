@@ -35,5 +35,6 @@
 //Function Declarations
 // void delay_seconds(int secs); //delay for amount of time in seconds
 void play_chord(char* chord, unsigned int secs); //Passed chord Macro and sets appropriate bits in LATB
+void strum_light(void);
 
 #endif

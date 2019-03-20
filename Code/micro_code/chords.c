@@ -1,18 +1,18 @@
 #include "chords.h"
 
-static void delay_seconds(int secs)//delay for amount of time in seconds
+static void delay_milliseconds(int millisecs)//delay for amount of time in seconds
 {
 	_CP0_SET_COUNT(0);
-	while (_CP0_GET_COUNT() < (secs*40000)) //number of seconds to delay times 40 000 clock ticks (1 millisec) 
+	while (_CP0_GET_COUNT() < (millisecs*40000)) //number of seconds to delay times 40 000 clock ticks (1 millisec) 
 	{
 		;
 		// _nop();
-		// NU32_WriteUART3("Here");
+		// NU32_WriteUART3("Here");  //debug
 	}
 
 }
 
-void play_chord(char* chord, unsigned int secs) //Passed chord Macro and sets appropriate bits in LATB
+void play_chord(char* chord, unsigned int millisecs) //Passed chord Macro and sets appropriate bits in LATB
 {
 	int hex_chord = 0x0000;
 	 switch(*chord) 
@@ -97,6 +97,29 @@ void play_chord(char* chord, unsigned int secs) //Passed chord Macro and sets ap
          break;
     }
 	LATB = hex_chord;
-	delay_seconds(secs);
+	delay_milliseconds(millisecs);
 	LATB = 0x0000;
+}
+
+void starter_light(void)
+{
+   LATDbits.LATD10 = 1;
+   delay_milliseconds(1000);
+   LATDbits.LATD10 = 0;
+   delay_milliseconds(500);
+   LATDbits.LATD10 = 1;
+   delay_milliseconds(1000);
+   LATDbits.LATD10 = 0;
+   delay_milliseconds(500);
+   LATDbits.LATD10 = 1;
+   delay_milliseconds(1000);
+   LATDbits.LATD10 = 0;
+   delay_milliseconds(500);
+}
+
+void strum_light(void)
+{
+   LATDbits.LATD10 = 1;
+   delay_milliseconds(200);
+   LATDbits.LATD10 = 0;
 }
