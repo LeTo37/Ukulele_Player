@@ -43,5 +43,5 @@ In both cases, once a song has either been written or chosen, the list of chords
 Happy Strumming!
 
 <p align="center">
-  <img src="https://github.com/LeTo37/Ukulele_Player/blob/master/media/H_RUP_All.jpg" style="transform:rotate(90deg);>
+  <img src="https://github.com/LeTo37/Ukulele_Player/blob/master/media/H_RUP_All.png" style="transform:rotate(90deg)>
 </p>
