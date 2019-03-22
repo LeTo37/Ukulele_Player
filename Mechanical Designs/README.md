@@ -2,7 +2,7 @@
 
 ## Final Full Assembly
 
-This final design was implemented with a combination of 3d printing PLA parts and Laser cutting Acryllic parts. The Full Assembly can be found [here](Full_Assembly.stl). As can be seen, it is comprised of a few different components which are described bewlow.
+This final design was implemented with a combination of 3d printing PLA parts and Laser cutting Acryllic parts. The Full Assembly can be found in the following stl file: ![here](Full_Assembly.stl). As can be seen, it is comprised of a few different components which are described below.
 
 ## 3D Printables
 
