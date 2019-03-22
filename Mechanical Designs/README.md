@@ -6,7 +6,6 @@ This final design was implemented with a combination of 3d printing PLA parts an
 <p align="center">
   <img src="https://github.com/LeTo37/Ukulele_Player/blob/master/images/MechFullAssembly.png">
 </p>
-![MechFullAssembly](../images/MechFullAssembly.png) 
 As can be seen, it is comprised of a few different components which are described below.
 
 ## 3D Printables
