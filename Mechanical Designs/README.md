@@ -3,6 +3,9 @@
 ## Final Full Assembly
 
 This final design was implemented with a combination of 3d printing PLA parts and Laser cutting Acryllic parts. The Full Assembly can be found [here](Full_Assembly.stl). The fully constructed mechanism is shown in the image below:
+<p align="center">
+  <img src="https://github.com/LeTo37/Ukulele_Player/blob/master/images/MechFullAssembly.png">
+</p>
 ![MechFullAssembly](../images/MechFullAssembly.png) 
 As can be seen, it is comprised of a few different components which are described below.
 
