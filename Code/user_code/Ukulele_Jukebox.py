@@ -47,10 +47,10 @@ def input_song():
 			print_list_chords()
 			chord = raw_input("Enter Chord: ")
 		if not (chord == '%'):
-			seconds = raw_input("Enter seconds: ")
-			while seconds not in {'1','2','3','4','5','6'}:
-				print("Please enter seconds greater than 0 and less than 7")
-				seconds = raw_input("Enter seconds: ")
+			seconds = raw_input("Enter milliseconds: ")
+			while (seconds > 7000 or seconds < 1000):
+				print("Please enter milliseconds greater than 999 and less than 7001 ms")
+				seconds = raw_input("Enter milliseconds: ")
 			song = song + chord +","+ seconds + ","
 	song = song[:-1]
 	if len(song) > 3:
