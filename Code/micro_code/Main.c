@@ -62,10 +62,11 @@ int main(void) {
      {
       strum_light();
      	play_chord(chords[i], seconds[i]);
-      // sprintf(debugprint,"Chord: %s \r\n",chords[i]);
-      // NU32_WriteUART3(debugprint);
-      // sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
-      // NU32_WriteUART3(debugprint);
+      //debugging
+      sprintf(debugprint,"Chord: %s \r\n",chords[i]);
+      NU32_WriteUART3(debugprint);
+      sprintf(debugprint,"seconds: %d \r\n",seconds[i]);
+      NU32_WriteUART3(debugprint);
      }
      if (i == chord_counter && i != 0)
      {
