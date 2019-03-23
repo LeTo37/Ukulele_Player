@@ -1,7 +1,7 @@
 # Human-Robot Ukulele Player (H-RUP)
 Designing and building an Human-Interactable Robotic Ukulele player. Below is a link to video of me playing the H-RUP!
 <div align="center">
-  <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6njqYxu-veQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Introduction
