@@ -1,7 +1,7 @@
 # Human-Robot Ukulele Player (H-RUP)
-Designing and building an Human-Interactable Robotic Ukulele player. Below is a link to video of me playing the H-RUP!
+Designing and building a Human-Interactable Robotic Ukulele player. Below is a link to video of me playing the H-RUP!
 
-[![Sawyer Ukulele Tune](http://i3.ytimg.com/vi/6njqYxu-veQ/maxresdefault.jpg)](https://www.youtube-nocookie.com/embed/6njqYxu-veQ "HRUP")
+[![Sawyer Ukulele Tune](http://i3.ytimg.com/vi/SKRP2N837I4/maxresdefault.jpg)](https://www.youtube-nocookie.com/embed/SKRP2N837I4 "HRUP")
 
 ## Introduction
 This repository holds all of the relevant documentation, including mechanical designs, circuit designs, code and data-sheets of the parts used in the process of designing and building the Human-Robot Ukulele Player (H-RUP). 
